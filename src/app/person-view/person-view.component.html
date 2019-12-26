@@ -1,0 +1,24 @@
+<div class="container  ">
+    <div class="row ">
+        <div class="col-4">{{inPerson.id}}</div>
+        <div class="col-4">{{inPerson.firstname}}</div>
+        <div class="col-4">{{inPerson.lastname}}</div>
+    </div>
+    <div class="m-4">
+        <button class="btn btn-warning m-4" (click)="onDeletePerson()">Удалить</button>
+        <button class="btn btn-primary" (click)="onEditPerson()">Редактировать</button>
+    </div>
+
+    <div class="row m-2" *ngIf="edit">
+        <div class="m-1">
+          <input type="text" class="form-control" placeholder="Имя" value="{{inPerson.firstname}}" #inputFirstname>
+        </div>
+        <div class="m-1">
+          <input type="text" class="form-control" placeholder="фамилия" value="{{inPerson.lastname}}" #inputLastname>
+        </div>
+        <div class=" m-1">
+          <button class="btn btn-primary"
+          (click)="onEditPerson(inputFirstname.value, inputLastname.value)">Сохранить</button>
+        </div>
+    </div>
+</div>
